@@ -10,5 +10,8 @@ COPY entrypoint.sh .
 # Add execute permission to the entrypoint script
 RUN chmod +x /usr/src/entrypoint.sh
 
+# Ensure the /tmp directory exists for potential output files
+RUN mkdir -p /tmp
+
 # Configure the container to be run as an executable
 ENTRYPOINT ["/usr/src/entrypoint.sh"]
